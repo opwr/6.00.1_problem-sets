@@ -8,33 +8,36 @@
 #if s = 'abcbcd', then your program should print
 #Longest substring in alphabetical order is: abc
 
-s = 'azcbobobegghakl'
+#s = 'zyxwvutsrqponmlkjihgfedcba'
 
 count = 0
 wordlen = len(s)
 i = 0
 save = ''
-substring = ''
+substring = s[i]
 
 while i < (wordlen - 1) :
-    print("\n\nThe loop is counting at " + str(i))
+#    print("\n\nThe loop is counting at " + str(i))
     if s[i] <= s[i+1]:
-        print(s[i] + " <= " +s[i+1])
+#        print(s[i] + " <= " +s[i+1])
         substring += s[i+1]
-        print("STARTING POINT    substring is " + substring)
+#        print("STARTING POINT    substring is " + substring)
         i += 1
         count += 1
-        print("currently counting at " + str(count))
+#        print("currently counting at " + str(count))
         if len(substring) > len(save):
-            print("save is " + save)
+#            print("save is " + save)
             save = substring
-            print("save is now updated to " + save)
-            print("substring is " + substring)
+#            print("save is now updated to " + save)
+#            print("substring is " + substring)
     else:
-        print("didn't find the sequence so I'm passing")
+#        print("didn't find the sequence so I'm passing")
         count = 0
         i += 1
         substring = s[i]
-        print("substring is " + substring)
+#        print("substring is " + substring)
+
+if save == '':
+    save = s[0]
 
 print("Longest substring in alphabetical order is: " + save)
